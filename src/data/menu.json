@@ -1,0 +1,17 @@
+[
+    {
+        "path": "/movies",
+        "name": "Movies",
+        "icon": "movie.svg"
+    },
+    {
+        "path": "/shows",
+        "name": "Shows TV",
+        "icon": "tv.svg"
+    },
+    {
+        "path": "/tops",
+        "name": "Tops",
+        "icon": "thumbs-up.svg"
+    }
+]
