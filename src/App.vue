@@ -65,7 +65,7 @@ a:visited {
 }
 
 .title-sub {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 600;
   color: #000;
 }

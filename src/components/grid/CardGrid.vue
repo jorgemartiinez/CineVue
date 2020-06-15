@@ -48,7 +48,7 @@ $border-radius: 1.5rem;
 
     &__img-wrapper {
       width: 100%;
-      height: 80%;
+      height: 85%;
       position: relative;
     }
 
@@ -60,7 +60,7 @@ $border-radius: 1.5rem;
     }
 
     &__info {
-      height: 20%;
+      height: 15%;
       padding: 0.5rem;
     }
 
