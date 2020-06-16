@@ -19,6 +19,11 @@ export default {
 
 <style lang="scss">
 // * RESET CSS
+
+#app {
+  animation: fadeIn 1s ease-in-out;
+}
+
 *,
 *::before,
 *::after {
@@ -57,6 +62,11 @@ a:visited {
   color: inherit;
 }
 
+router-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 // * TYPOGRAPHY
 .title {
   font-size: 4rem;
@@ -79,5 +89,24 @@ a:visited {
 .container {
   max-width: 120rem;
   margin: 0 auto;
+}
+
+// * ANIMATIONS
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeInFast {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.fadeInSlow {
+  animation: fadeIn 1.5s ease;
 }
 </style>

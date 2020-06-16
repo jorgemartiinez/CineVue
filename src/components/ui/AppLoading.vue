@@ -1,5 +1,5 @@
 <template>
-  <div class="loading">
+  <div class="loading fadeInFast">
     <h2 class="title">Cargando...</h2>
     <img src="@/assets/icons/loading.svg" alt="Cargando..." />
   </div>

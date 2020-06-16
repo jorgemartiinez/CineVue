@@ -1,7 +1,7 @@
 <template>
   <div class="swiper">
     <vue-card-stack
-      :cards="items.results"
+      :cards="items"
       :stack-width="800"
       :card-width="500"
       :card-height="700"
@@ -18,16 +18,10 @@
 import CardSwiperItem from './CardSwiperItem.vue';
 import VueCardStack from 'vue-card-stack';
 export default {
+  props: { items: Array },
   components: {
     VueCardStack,
     CardSwiperItem
-  },
-  props: { items: Object },
-  mounted() {
-    console.log('Props', this.data);
-  },
-  data() {
-    return {};
   }
 };
 </script>

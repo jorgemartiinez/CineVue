@@ -1,22 +1,28 @@
 <template>
-  <article class="card" v-if="item.backdrop_path">
-    <img
-      class="card__img"
-      :src="`https://image.tmdb.org/t/p/original/${item.poster_path}`"
-    />
-    <div class="card__rating">
-      <span>{{ item.vote_average }}%</span>
-    </div>
+  <article
+    class="card fadeInFast"
+    v-if="item.backdrop_path"
+    @click="goToRoute(item.id)"
+  >
+    <img class="card__img" :src="checkImg(item.poster_path)" />
+    <CardRating :rating="item.vote_average" />
   </article>
 </template>
 
 <script>
+import CardRating from '@/components/ui/CardRating.vue';
+import { imgMixin } from '@/mixins';
+
 export default {
+  mixins: [imgMixin],
+  components: { CardRating },
   props: {
     item: Object
   },
-  mounted() {
-    console.log('card item', this.item);
+  methods: {
+    goToRoute(id) {
+      this.$router.push(`/movies/${id}`);
+    }
   }
 };
 </script>
@@ -38,16 +44,7 @@ $border-radius: 1.5rem;
     height: 100%;
     border-radius: $border-radius;
     margin-bottom: 1.5rem;
-  }
-
-  &__rating {
-    position: absolute;
-    bottom: 2%;
-    right: 2%;
-    background-color: $color-primary;
-    padding: 1.5rem 1.5rem;
-    border-radius: 50%;
-    font-size: 1.5rem;
+    -webkit-user-drag: none;
   }
 }
 </style>

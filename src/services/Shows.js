@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const BASE_URL = process.env.VUE_APP_TMDB_URL;
 const TOKEN = process.env.VUE_APP_TMDB_TOKEN;
-const RESOURCE = '/movie';
+const RESOURCE = '/tv';
 
 const instance = axios.create({
   baseURL: `${BASE_URL}`,
@@ -11,7 +11,7 @@ const instance = axios.create({
 });
 
 export default {
-  getPopularMovies() {
+  getPopularShows() {
     return instance
       .get(`${RESOURCE}/popular?language=es_ES`)
       .then(response => response.data['results']);

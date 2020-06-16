@@ -1,19 +1,33 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Movies from './views/Movies.vue';
+import Movie from './views/Movie.vue';
+import Shows from './views/Shows.vue';
 
 Vue.use(Router);
 
-import menuJSON from '@/data/menu.json';
-
-let routes = [];
-
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
+      name: 'Home',
+      component: Movies
+    },
+    {
+      path: '/movies',
       name: 'Movies',
       component: Movies
+    },
+    {
+      path: '/shows',
+      name: 'Shows',
+      component: Shows
+    },
+    {
+      path: '/movies/:id',
+      name: 'Movie',
+      component: Movie
     }
     // {
     //   path: '/about',

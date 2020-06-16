@@ -5,7 +5,7 @@
     </div>
     <ul class="nav__links">
       <li class="nav__item" v-for="(item, index) of menu" :key="index">
-        <router-link to="" class="nav__link">
+        <router-link :to="item.path" class="nav__link">
           <img
             class="nav__icon"
             :src="require(`@/assets/icons/${item.icon}`)"

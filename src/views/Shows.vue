@@ -6,8 +6,6 @@
     <div v-else>
       <h2 class="title">Las más populares ahora</h2>
       <CardSwiper :items="popular" />
-      <h2 class="title">En Cines</h2>
-      <CardGrid :items="nowPlaying" :busy="busy" @loadNext="loadNext" />
     </div>
   </main>
 </template>
@@ -16,7 +14,7 @@
 import CardGrid from '@/components/grid/CardGrid.vue';
 import Loading from '@/components/ui/AppLoading.vue';
 import CardSwiper from '@/components/swiper/CardSwiper.vue';
-import Movies from '@/services/Movies.js';
+import Shows from '@/services/Shows.js';
 
 export default {
   data() {
@@ -39,10 +37,7 @@ export default {
   methods: {
     async fetch() {
       try {
-        const data = await Promise.all([
-          Movies.getPopularMovies(this.page),
-          Movies.getNowPlaying()
-        ]);
+        const data = await Promise.all([Shows.getPopularShows()]);
         this.popular = data[0];
         this.nowPlaying = data[1];
         setTimeout(() => {
@@ -60,7 +55,7 @@ export default {
         this.page++;
         console.log('load next data, page', this.page);
         try {
-          const newData = await Movies.getNowPlaying(this.page);
+          const newData = await Shows.getNowPlaying(this.page);
           if (newData.length > 0) {
             newData.map(movie => this.nowPlaying.push(movie));
             this.busy = false;
