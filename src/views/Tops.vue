@@ -5,9 +5,9 @@
     </div>
     <div v-else>
       <h2 class="title">Películas mejor valoradas</h2>
-      <CardGrid :items="movies" />
+      <CardGrid :items="movies" :input="'movies'" />
       <h2 class="title">Series mejor valoradas</h2>
-      <CardGrid :items="shows" />
+      <CardGrid :items="shows" :input="'shows'" />
     </div>
   </main>
 </template>

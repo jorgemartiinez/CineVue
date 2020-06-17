@@ -35,7 +35,7 @@ export default {
     return {
       id: 0,
       item: {},
-      type: String,
+      type: '',
       loading: true
     };
   },

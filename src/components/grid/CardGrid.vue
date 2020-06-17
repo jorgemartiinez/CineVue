@@ -1,7 +1,12 @@
 <template>
   <div>
     <div class="card-grid">
-      <CardGridItem :item="item" v-for="item of items" :key="item.id" />
+      <CardGridItem
+        :item="item"
+        v-for="item of items"
+        :key="item.id"
+        :input="input"
+      />
     </div>
     <div
       v-infinite-scroll="loadMore"
@@ -17,7 +22,7 @@
 import CardGridItem from '@/components/grid/CardGridItem.vue';
 export default {
   components: { CardGridItem },
-  props: { items: Array, busy: Boolean },
+  props: { items: Array, busy: Boolean, input: String },
   methods: {
     loadMore() {
       this.$emit('loadNext');

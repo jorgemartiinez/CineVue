@@ -1,6 +1,6 @@
 <template>
   <div>
-    <article class="card fadeInSlow" @click="goToRoute(item.id)">
+    <article class="card fadeInSlow" @click="goToRoute(item.id, input)">
       <div class="card__img-wrapper">
         <img class="card__img" :src="checkImg(item.poster_path)" />
         <CardRating :rating="item.vote_average" />
@@ -26,7 +26,8 @@ import { imgMixin, pathToSinglePage } from '@/mixins';
 export default {
   props: {
     item: Object,
-    type: String
+    type: String,
+    input: String
   },
   mixins: [imgMixin, pathToSinglePage],
   components: {

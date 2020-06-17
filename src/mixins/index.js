@@ -13,7 +13,7 @@ const imgMixin = {
 const pathToSinglePage = {
   data() {
     return {
-      type: String
+      type: ''
     };
   },
   created() {
@@ -22,7 +22,11 @@ const pathToSinglePage = {
   },
   methods: {
     goToRoute(id) {
-      this.$router.push(`/${this.type}/${id}`);
+      if (!this.input) {
+        this.$router.push(`/${this.type}/${id}`);
+      } else {
+        this.$router.push(`/${this.input}/${id}`);
+      }
     }
   }
 };

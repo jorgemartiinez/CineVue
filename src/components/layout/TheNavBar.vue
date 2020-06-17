@@ -1,7 +1,7 @@
 <template>
   <nav class="nav">
     <div class="nav__logo">
-      <a href="#" class="nav__logo-link">CineVue</a>
+      <a class="nav__logo-link">CineVue</a>
     </div>
     <ul class="nav__links">
       <li class="nav__item" v-for="(item, index) of menu" :key="index">
