@@ -36,6 +36,10 @@ html {
   font-size: 62.5%;
   height: 100%;
   width: 100%;
+
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
 }
 
 body {
@@ -46,14 +50,6 @@ body {
   line-height: 1.7;
   background-color: $color-bg;
   color: #fff;
-
-  @include respond(tab-land) {
-    font-size: 56.25%;
-  }
-
-  @include respond(tab-port) {
-    font-size: 50%;
-  }
 }
 
 ul {

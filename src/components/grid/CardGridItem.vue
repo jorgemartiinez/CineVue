@@ -59,10 +59,7 @@ $border-radius: 1.5rem;
     width: 100%;
     height: 45rem;
     @include respond(tab-port) {
-      height: 40rem;
-    }
-    @include respond(phone) {
-      height: 55rem;
+      height: 70rem;
     }
   }
 

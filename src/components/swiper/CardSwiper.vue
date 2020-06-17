@@ -2,10 +2,10 @@
   <div class="swiper">
     <vue-card-stack
       :cards="items"
-      :stack-width="800"
-      :card-width="500"
-      :card-height="700"
-      :max-visible-cards="10"
+      :stack-width="stackWidth"
+      :card-width="cardWidth"
+      :card-height="cardHeight"
+      :max-visible-cards="visibleCards"
     >
       <template v-slot:card="{ card }">
         <CardSwiperItem :item="card" />
@@ -19,6 +19,14 @@ import CardSwiperItem from './CardSwiperItem.vue';
 import VueCardStack from 'vue-card-stack';
 export default {
   props: { items: Array },
+  data() {
+    return {
+      stackWidth: 800,
+      cardWidth: 500,
+      cardHeight: 700,
+      visibleCards: 10
+    };
+  },
   components: {
     VueCardStack,
     CardSwiperItem

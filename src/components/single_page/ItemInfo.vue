@@ -76,4 +76,7 @@ export default {
   margin-bottom: 2rem;
   font-style: italic;
 }
+.title-sub {
+  color: #fff !important;
+}
 </style>

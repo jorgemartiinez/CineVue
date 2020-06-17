@@ -18,7 +18,7 @@ export default {
   },
   getNowPlaying(page) {
     return instance
-      .get(`${RESOURCE}/airing_today?page=${page}&language=es_ES&region=ES`)
+      .get(`${RESOURCE}/airing_today?page=${page}&language=es_ES`)
       .then(response => response.data['results']);
   },
   getById(id) {

@@ -6,7 +6,8 @@
     <div v-else>
       <h2 class="title">Populares ahora</h2>
       <CardSwiper :items="popular" />
-      <h2 class="title">En Cines</h2>
+      <h2 class="title" v-if="this.type === 'Movies'">En Cines</h2>
+      <h2 class="title" v-else>Lo más visto</h2>
       <CardGrid :items="nowPlaying" :busy="busy" @loadNext="loadNext" />
       <h3 v-if="completed" style="margin-top: 3rem; text-align:center;">
         No hay más resultados para mostrar. &#128552;
