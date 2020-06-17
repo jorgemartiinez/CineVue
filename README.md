@@ -1,4 +1,8 @@
-# cinevue
+# Cinevue
+
+Proyecto que utiliza la API de TheMovieDB para hacer una app que sirve para visualizar películas, series y tops.
+
+Me ha servido para aprender sobre temas de Vue como el infinite scroll, mixins, card swipers, sass en el mismo componente, etc.
 
 ## Project setup
 ```
@@ -19,6 +23,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
