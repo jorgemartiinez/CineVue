@@ -3,6 +3,25 @@
 $color-bg: #262424;
 $color-primary: #d72323;
 
-$color-black-soft: rgba(0,0,0,0.6);
+$color-black-soft: rgba(0, 0, 0, 0.6);
 
 $border-white: 3px solid #fff;
+
+/* MEDIA QUERIES */
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    } //900px
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+}

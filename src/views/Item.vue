@@ -65,7 +65,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .movie {
   &__bg {
     width: 70%;
@@ -75,6 +75,11 @@ export default {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    @include respond(tab-port) {
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
+    }
   }
 
   &__text-wrapper {
@@ -83,6 +88,9 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    @include respond(tab-port) {
+      width: 100%;
+    }
   }
   .title-sub {
     margin-top: 4rem;

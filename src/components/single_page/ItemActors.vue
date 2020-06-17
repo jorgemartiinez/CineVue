@@ -37,7 +37,7 @@ export default {
   justify-content: flex-start;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
-  height: 50rem;
+  height: 50%;
   padding-bottom: 4rem;
 
   &__card {

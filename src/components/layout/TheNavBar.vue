@@ -37,6 +37,12 @@ export default {
   padding: 2rem;
   border-bottom: $border-white;
   margin-bottom: 5rem;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
   &__links {
     display: flex;
     justify-content: center;
@@ -55,13 +61,17 @@ export default {
   }
 
   &__link {
-    font-size: 2.3rem;
+    font-size: 2rem;
     display: flex;
     align-items: center;
   }
 
   &__logo {
     margin-right: auto;
+    @include respond(tab-port) {
+      margin-right: 0;
+      margin-bottom: 2rem;
+    }
     color: $color-primary;
     font-size: 3.5rem;
     font-weight: 600;

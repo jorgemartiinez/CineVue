@@ -28,9 +28,18 @@ export default {
   flex: 0 0 30%;
   margin-right: 5rem;
 
+  @include respond(tab-port) {
+    margin-right: 0;
+    text-align: center;
+    flex: 1;
+  }
+
   &__img {
     width: 100%;
     border-radius: 2rem;
+    @include respond(tab-port) {
+      width: 60%;
+    }
   }
 }
 </style>

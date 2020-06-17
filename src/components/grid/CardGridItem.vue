@@ -26,7 +26,6 @@ import { imgMixin, pathToSinglePage } from '@/mixins';
 export default {
   props: {
     item: Object,
-    type: String,
     input: String
   },
   mixins: [imgMixin, pathToSinglePage],
@@ -47,7 +46,6 @@ $border-radius: 1.5rem;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
   width: 100%;
   background-color: #fff;
   box-shadow: 0.5rem 0.5rem 0.5rem rgba(rgb(0, 0, 0), 20);
@@ -57,9 +55,15 @@ $border-radius: 1.5rem;
   cursor: pointer;
 
   &__img-wrapper {
-    width: 100%;
-    height: 85%;
     position: relative;
+    width: 100%;
+    height: 45rem;
+    @include respond(tab-port) {
+      height: 40rem;
+    }
+    @include respond(phone) {
+      height: 55rem;
+    }
   }
 
   &__img {

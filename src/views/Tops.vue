@@ -30,7 +30,6 @@ export default {
     async fetch() {
       this.movies = await Movies.getTopRated();
       this.shows = await Shows.getTopRated();
-      console.log(this.items);
       this.loading = false;
     }
   }
