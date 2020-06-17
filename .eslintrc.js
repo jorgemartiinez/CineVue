@@ -3,7 +3,7 @@ module.exports = {
   env: {
     node: true
   },
-  extends: ["plugin:vue/strongly-recommended"],
+  extends: ["plugin:vue/strongly-recommended"], 
   rules: {
     'no-console': 'off',
     'no-debugger': 'off',
