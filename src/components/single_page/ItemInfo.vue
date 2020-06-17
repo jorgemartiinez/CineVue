@@ -4,7 +4,7 @@
       {{ item.title }}
     </h2>
     <h2 class="title" v-else>
-      {{ item.original_name }}
+      {{ item.name }}
     </h2>
 
     <h4

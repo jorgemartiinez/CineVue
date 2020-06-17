@@ -88,7 +88,6 @@ export default {
           } else {
             newData = await Shows.getNowPlaying(this.page);
           }
-          console.log(newData);
           if (newData.length > 0) {
             newData.map(item => this.nowPlaying.push(item));
           } else {

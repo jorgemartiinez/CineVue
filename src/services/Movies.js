@@ -13,7 +13,7 @@ const instance = axios.create({
 export default {
   getPopular() {
     return instance
-      .get(`${RESOURCE}/popular?language=es_ES`)
+      .get(`${RESOURCE}/popular?language=es_ES&region=ES`)
       .then(response => response.data['results']);
   },
   getNowPlaying(page) {
@@ -25,5 +25,10 @@ export default {
     return instance
       .get(`${RESOURCE}/${id}?append_to_response=credits,images&language=es_ES`)
       .then(response => response.data);
+  },
+  getTopRated() {
+    return instance
+      .get(`${RESOURCE}/top_rated?language=es_ES`)
+      .then(response => response.data['results']);
   }
 };

@@ -9,7 +9,7 @@
         {{ item.title | cutBySize(20) }}
       </h2>
       <h2 class="title-sub" v-else>
-        {{ item.original_name | cutBySize(20) }}
+        {{ item.name | cutBySize(20) }}
       </h2>
       <div class="card__info">
         <p class="paragraph-sub">{{ item.release_date }}</p>

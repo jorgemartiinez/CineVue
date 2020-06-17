@@ -11,11 +11,18 @@ const imgMixin = {
 };
 
 const pathToSinglePage = {
+  data() {
+    return {
+      type: String
+    };
+  },
+  created() {
+    const route = this.$route.path;
+    this.type = route.slice(1);
+  },
   methods: {
     goToRoute(id) {
-      const route = this.$route.path;
-      const type = route.slice(1);
-      this.$router.push(`/${type}/${id}`);
+      this.$router.push(`/${this.type}/${id}`);
     }
   }
 };
