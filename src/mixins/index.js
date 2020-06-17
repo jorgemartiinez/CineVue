@@ -10,12 +10,14 @@ const imgMixin = {
   }
 };
 
-const pathToSingleMovie = {
+const pathToSinglePage = {
   methods: {
     goToRoute(id) {
-      this.$router.push(`/movies/${id}`);
+      const route = this.$route.path;
+      const type = route.slice(1);
+      this.$router.push(`/${type}/${id}`);
     }
   }
 };
 
-export { imgMixin, pathToSingleMovie };
+export { imgMixin, pathToSinglePage };

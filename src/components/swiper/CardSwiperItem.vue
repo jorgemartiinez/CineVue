@@ -11,18 +11,13 @@
 
 <script>
 import CardRating from '@/components/ui/CardRating.vue';
-import { imgMixin } from '@/mixins';
+import { imgMixin, pathToSinglePage } from '@/mixins';
 
 export default {
-  mixins: [imgMixin],
+  mixins: [imgMixin, pathToSinglePage],
   components: { CardRating },
   props: {
     item: Object
-  },
-  methods: {
-    goToRoute(id) {
-      this.$router.push(`/movies/${id}`);
-    }
   }
 };
 </script>

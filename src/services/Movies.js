@@ -11,7 +11,7 @@ const instance = axios.create({
 });
 
 export default {
-  getPopularMovies() {
+  getPopular() {
     return instance
       .get(`${RESOURCE}/popular?language=es_ES`)
       .then(response => response.data['results']);

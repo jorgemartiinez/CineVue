@@ -62,6 +62,10 @@ a:visited {
   color: inherit;
 }
 
+a:not(:visited) {
+  color: inherit;
+}
+
 router-link {
   color: inherit;
   text-decoration: none;

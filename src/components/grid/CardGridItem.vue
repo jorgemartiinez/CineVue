@@ -5,8 +5,13 @@
         <img class="card__img" :src="checkImg(item.poster_path)" />
         <CardRating :rating="item.vote_average" />
       </div>
+      <h2 class="title-sub" v-if="item.title && item.title.length > 0">
+        {{ item.title | cutBySize(20) }}
+      </h2>
+      <h2 class="title-sub" v-else>
+        {{ item.original_name | cutBySize(20) }}
+      </h2>
       <div class="card__info">
-        <h2 class="title-sub">{{ item.title | cutBySize(20) }}</h2>
         <p class="paragraph-sub">{{ item.release_date }}</p>
       </div>
     </article>
@@ -16,23 +21,19 @@
 <script>
 import CardRating from '@/components/ui/CardRating.vue';
 import { cutBySize } from '@/utils/filters.js';
-import { imgMixin } from '@/mixins';
+import { imgMixin, pathToSinglePage } from '@/mixins';
 
 export default {
   props: {
-    item: Object
+    item: Object,
+    type: String
   },
-  mixins: [imgMixin],
+  mixins: [imgMixin, pathToSinglePage],
   components: {
     CardRating
   },
   filters: {
     cutBySize
-  },
-  methods: {
-    goToRoute(id) {
-      this.$router.push(`/movies/${id}`);
-    }
   }
 };
 </script>

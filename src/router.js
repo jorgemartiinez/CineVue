@@ -1,8 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Movies from './views/Movies.vue';
-import Movie from './views/Movie.vue';
-import Shows from './views/Shows.vue';
+import Items from './views/Items.vue';
+import Item from './views/Item.vue';
 
 Vue.use(Router);
 
@@ -11,32 +10,31 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: Movies
+      redirect: '/movies'
     },
     {
       path: '/movies',
       name: 'Movies',
-      component: Movies
-    },
-    {
-      path: '/shows',
-      name: 'Shows',
-      component: Shows
+      component: Items,
+      meta: { reuse: false }
     },
     {
       path: '/movies/:id',
       name: 'Movie',
-      component: Movie
+      component: Item,
+      meta: { reuse: false }
+    },
+    {
+      path: '/shows',
+      name: 'Shows',
+      component: Items,
+      meta: { reuse: false }
+    },
+    {
+      path: '/shows/:id',
+      name: 'Show',
+      component: Item,
+      meta: { reuse: false }
     }
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (about.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () =>
-    //     import(/* webpackChunkName: "about" */ './views/About.vue')
-    // }
   ]
 });

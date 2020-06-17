@@ -11,14 +11,14 @@ const instance = axios.create({
 });
 
 export default {
-  getPopularShows() {
+  getPopular() {
     return instance
       .get(`${RESOURCE}/popular?language=es_ES`)
       .then(response => response.data['results']);
   },
   getNowPlaying(page) {
     return instance
-      .get(`${RESOURCE}/now_playing?page=${page}&language=es_ES`)
+      .get(`${RESOURCE}/airing_today?page=${page}&language=es_ES`)
       .then(response => response.data['results']);
   },
   getById(id) {

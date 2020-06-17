@@ -1,10 +1,16 @@
 <template>
   <div>
-    <h2 class="title">
+    <h2 class="title" v-if="item.title && item.title.length > 0">
       {{ item.title }}
     </h2>
+    <h2 class="title" v-else>
+      {{ item.original_name }}
+    </h2>
 
-    <h4 class="title-sub subtitle" v-if="item.tagline.length > 0">
+    <h4
+      class="title-sub subtitle"
+      v-if="item.tagline && item.tagline.length > 0"
+    >
       "{{ item.tagline }}"
     </h4>
 
@@ -25,7 +31,8 @@
         Web
       </template>
       <template v-slot:afterTitle>
-        <a :href="item.homepage">Acceder a web de {{ item.title }} </a>
+        <br />
+        <a :href="item.homepage">Acceder a web </a>
       </template>
     </ItemInfoLine>
 

@@ -5,12 +5,12 @@
       <AppLoading />
     </div>
     <div class="movie__info-container fadeIn" v-else>
-      <ItemPoster :item="movie" />
+      <ItemPoster :item="item" />
       <div class="movie__text-wrapper">
-        <ItemInfo :item="movie" />
+        <ItemInfo :item="item" />
       </div>
     </div>
-    <ItemActors :cast="movie.credits.cast" v-if="movie.credits" />
+    <ItemActors :cast="item.credits.cast" v-if="item.credits" />
   </div>
 </template>
 
@@ -21,6 +21,7 @@ import ItemActors from '@/components/single_page/ItemActors.vue';
 import AppBackButton from '../components/ui/AppBackButton.vue';
 import AppLoading from '@/components/ui/AppLoading.vue';
 import Movies from '@/services/Movies.js';
+import Shows from '@/services/Shows.js';
 
 export default {
   components: {
@@ -33,23 +34,30 @@ export default {
   data() {
     return {
       id: 0,
-      movie: {},
+      item: {},
+      type: String,
       loading: true
     };
   },
   created() {
     this.id = this.$route.params.id;
-    this.fetchMovie();
+    const route = this.$route.path;
+    this.type = route.split('/')[1];
+    this.fetch();
   },
   methods: {
-    async fetchMovie() {
+    async fetch() {
       try {
-        this.movie = await Movies.getById(this.id);
+        if (this.type == 'movies') {
+          this.item = await Movies.getById(this.id);
+        } else {
+          this.item = await Shows.getById(this.id);
+        }
         setTimeout(() => {
           this.loading = false;
         }, 500);
       } catch (err) {
-        console.log('err ocurred getting single movie by id', err);
+        console.log('err ocurred getting single by id', err);
         this.loading = false;
       }
     }
